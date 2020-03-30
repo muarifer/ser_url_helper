@@ -1,0 +1,14 @@
+name: ser_url_helper
+description: Some of URL helpers for Dart (and Flutter of course)
+version: 0.1.1
+homepage: https://www.serenay.net.tr/
+repository: https://www.github.com/muarifer/ser_url_helper
+issue_tracker: https://www.github.com/muarifer/ser_url_helper/issues
+author: Murat Çeliker <murat@serenay.net.tr>
+
+environment:
+  sdk: '>=2.2.0 <3.0.0'
+
+
+dev_dependencies:
+  test: ^1.14.2
