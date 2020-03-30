@@ -1,10 +1,9 @@
 class SerUrlHelper {
-
   /// Get fqdn with https://
   /// or http://localhost/ for localhost urls.
-  /// 
+  ///
   static String fqdnUrl(String site) {
-    if(site.startsWith('localhost')) {
+    if (site.startsWith('localhost')) {
       return "http://$site/";
     }
 
@@ -15,20 +14,17 @@ class SerUrlHelper {
     tld = tld.replaceAll('/', '');
 
     // for Uri.parse
-    if(!site.startsWith("https") || !site.startsWith("http")) {
-        site = "https://"+site;
+    if (!site.startsWith("https") || !site.startsWith("http")) {
+      site = "https://" + site;
     }
 
     Uri uri = Uri.parse(site);
 
     int countDot = ".".allMatches(uri.host).length;
-    if(countDot == 1 || (countDot == 2 && tld == "tr")) {
+    if (countDot == 1 || (countDot == 2 && tld == "tr")) {
       return "https://www.${uri.host}/";
     } else {
       return "https://${uri.host}/";
     }
-
   }
-
-
 }
